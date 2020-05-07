@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+{{ page_setup.title }}
+{% endblock %}
+
+{% block content %}
+<h1>Hi, {{ page_setup.name }}</h1>
+{% for post in posts %}
+<h2>{{ post.title }}</h2>
+<h3>{{ post.author }}</h3>
+{% if verbose %}
+<p>{{ post.text }}</p>
+{% else %}
+<p>{{ post.slug }}</p>
+{% endif %}
+{% endfor %}
+{% endblock %}
